@@ -16,9 +16,14 @@ class CarPark:
         self.sensors = sensors or []
         self.displays = displays or []
 
+    @property
+    def available_bays(self):
+        #car_park.available_bays
+        return self.capacity - len(self.plates)
+
 
     def __str__(self):
-        return f"Car Park located at {self.location}. Capacity: {self.capacity} bays."
+        return f"CAR PARK LOCATED AT{self.location}."
 
 
     def register(self, component):
@@ -33,7 +38,24 @@ class CarPark:
 
 
     def add_car(self, plate):
-        if plate in self.plates:
-            raise ValueError("Car already registered!")
         self.plates.append(plate)
+
+    def remove_car(self, plate):
+        self.plates.remove(plate)
+
+
+    def update_displays(self):
+
+        for display in self.displays:
+            display.update({"Available bays": self.available_bays,
+                            "temperature": 20})
+            print(f'Updating {display}')
+
+
+
+
+
+
+
+
 
