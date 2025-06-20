@@ -88,15 +88,19 @@ git push -u origin feature/mvp
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- |------------| ------- |
-| `CarPark`  | Location   |         |
-|            | Capacity   |         |
-|            | Plates     |         |
-|            | Displays   |         |
-|            | Sensors    |         |
-| `Sensor`   |            |         |
-| `Display`  |            |         |
+| Class Name | Attributes | Methods        |
+| ---------- |------------|----------------|
+| `CarPark`  | Location   | Register       |
+|            | Capacity   | Add car        |
+|            | Plates     | Remove car     |
+|            | Displays   | Update display |
+|            | Sensors    |                |
+|            |            |                |
+|            |            |                |
+| `Sensor`   | id         |                |
+|            | car_park   |                |
+|            | is_active  |                |
+| `Display`  |            |                |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -223,11 +227,7 @@ You realize that you need a way to configure the car park system. You decide to 
 **Additional evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
 
-```bash
-[student@workstation ipriot-car-park-prj]$ git tag
-s1
-s2
-```
+![tags_s1-2.png](Screenshots/tags_s1-2.png)
 
 ### 2.6. Relate the classes
 
