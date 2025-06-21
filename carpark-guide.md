@@ -396,11 +396,22 @@ For example, you may want to see the number of available bays, the current tempe
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+> 
+>The class responsible for the number of available bays is CarPark, 
+because the value depends on the attributes total capacity and the number of cars inside.
+> 
 >Q. Which class is responsible for the current temperature (and why)?
->
+> 
+>The class that is responsible for the temperature should be CarPark. 
+> Not only because it holds the location, and update displays but also 
+> because it is the main logic class.
+> Since the temperature depends on the location, and car park manages 
+> displays, it makes sense for this information to live there
+> 
 >Q. Which class is responsible for the time (and why)?
 >
+> Time should be handled by CarPark because it controls what gets sent to the displays. Even though it doesn’t produce the time directly, it’s responsible for managing and distributing that information to users when they enter the car park.
+> 
 --------
 
 ##### 2.7.3.1. Detour: implement available bays
@@ -473,9 +484,7 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+![methods-car-park-s4.png](Screenshots/methods-car-park-s4.png)
 
 Answer the following questions:
 > **Review Questions**

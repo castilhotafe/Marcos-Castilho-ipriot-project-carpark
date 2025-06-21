@@ -9,8 +9,8 @@ class Sensor:
         self.is_active = is_active
 
 
-        def __str__(self):
-            return f"Sensor {self.id} - {car_park} is {'active' if self.is_active else 'inactive'}."
+    def __str__(self):
+        return f"Sensor {self.id} - {self.car_park} is {'active' if self.is_active else 'inactive'}."
 
 
 
