@@ -48,7 +48,7 @@ class CarPark:
 
         for display in self.displays:
             display.update({"Available bays": self.available_bays,
-                            "temperature": 20})
+                            "temperature": 20,})
             print(f'Updating {display}')
 
 
