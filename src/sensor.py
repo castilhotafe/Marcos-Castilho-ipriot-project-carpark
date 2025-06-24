@@ -13,7 +13,7 @@ class Sensor:
         self.is_active = is_active
 
 
-    def scan_plate(self):
+    def _scan_plate(self):
         return "FAKE-" + format(random.randint(0, 999), "04d")
 
 
@@ -33,6 +33,8 @@ class Sensor:
 
 
 class EntrySensor(Sensor):
+
+
     def update_car_park(self, plate):
         self.car_park.add_car(plate)
         print(f"Entry vehicle detected at {self.car_park} with plate {plate}")
