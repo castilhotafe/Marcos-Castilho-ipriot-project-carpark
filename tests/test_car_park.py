@@ -60,17 +60,17 @@ class TestCarPark(unittest.TestCase):
 
     def test_config_file_created(self):
         config_file_path = Path("config_test.json")
-        self.car_park.to_json(config_file_path)
+        self.car_park.write_config(config_file_path)
         self.assertTrue(config_file_path.exists())
         config_file_path.unlink(missing_ok=True)
 
     def test_config_file_loads_correctly(self):
         config_file_path = Path("config_test.json")
-        self.car_park.to_json(config_file_path)
-        loaded_car_park = CarPark.from_json(config_file_path)
+        self.car_park.write_config(config_file_path)
+        loaded_car_park = CarPark.from_config(config_file_path)
         self.assertEqual(loaded_car_park.location, self.car_park.location)
         self.assertEqual(loaded_car_park.capacity, self.car_park.capacity)
-        self.assertEqual(loaded_car_park.plates, self.car_park.plates)
+        self.assertEqual(loaded_car_park.log_file, self.car_park.log_file)
         config_file_path.unlink(missing_ok=True)
 
 

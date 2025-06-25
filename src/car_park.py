@@ -31,23 +31,21 @@ class CarPark:
             self.log_file.touch()
 
 
-    def to_json(self, file_name):
+    def write_config(self, file_name):
         with open(file_name, "w") as file:
             json.dump({"location": self.location,
                        "capacity": self.capacity,
                        "log_file": str(self.log_file)}, file)
 
 
-    @staticmethod
-    def from_json(file_name):
-        """Allows the creation of an instance of a car park from a json file.
-        >>>car_park = CarPark.from_json("some_file.txt")
-        """
-        with open(file_name, "r") as file:
-            conf = json.load(file)
-        return CarPark(location=conf["location"],
-                       capacity=int(conf["capacity"]),
-                       log_file=conf["log_file"])
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(location=config["location"],
+                   capacity=int(config["capacity"]),
+                   log_file=config["log_file"])
 
     @property
     def available_bays(self):
