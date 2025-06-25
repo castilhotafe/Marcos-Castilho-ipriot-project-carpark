@@ -26,7 +26,6 @@ class CarPark:
             self.log_file = Path(log_file)
         else:
             raise TypeError("log_file must be a str or pathlib.Path")
-
         if not self.log_file.exists():
             self.log_file.touch()
 
