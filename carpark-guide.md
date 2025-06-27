@@ -88,25 +88,25 @@ git push -u origin feature/mvp
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes     | Methods        |
-| ---------- |----------------|----------------|
-| `CarPark`  | Location       | Register       |
-|            | Capacity       | Add car        |
-|            | Plates         | Remove car     |
-|            | Displays       | Update display |
-|            | Sensors        |                |
-|            | Available Bays |                |
-|            |                |                |
-|            |                |                |
-| `Sensor`   | id             |                |
-|            | car_park       |                |
-|            | is_active      |                |
-|            |                |                |
-|            |                |                |
-| `Display`  | id             | Update         |
-|            | Message        |                |
-|            | Is on          |                |
-|            | Car park       |                |
+| Class Name | Attributes     | Methods         |
+| ---------- |----------------|-----------------|
+| `CarPark`  | Location       | Register        |
+|            | Capacity       | Add car         |
+|            | Plates         | Remove car      |
+|            | Displays       | Update display  |
+|            | Sensors        |                 |
+|            | Available Bays |                 |
+|            |                |                 |
+|            |                |                 |
+| `Sensor`   | id             | Update Car Park |
+|            | car_park       | Detect Car      |
+|            | is_active      |                 |
+|            |                |                 |
+|            |                |                 |
+| `Display`  | id             | Update          |
+|            | Message        |                 |
+|            | Is on          |                 |
+|            | Car park       |                 |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -1110,9 +1110,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
-   ![Main.py output](screenshots/main-py.png)
-   ```
+![main_output.png](Screenshots%2Fmain_output.png)
 
 > Required for evidencing competency:
 

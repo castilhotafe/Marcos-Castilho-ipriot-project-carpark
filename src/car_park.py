@@ -53,7 +53,7 @@ class CarPark:
 
 
     def __str__(self):
-        return f"CAR PARK LOCATED AT {self.location}."
+        return f"Car park located at {self.location}."
 
 
     def register(self, component):
