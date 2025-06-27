@@ -22,7 +22,7 @@ class Sensor:
         pass
 
     def detect_vehicle(self):
-        plate = self.scan_plate()
+        plate = self._scan_plate()
         self.update_car_park(plate)
         print(f"Incoming vehicle detected at {self.car_park} with plate {plate}")
 

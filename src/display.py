@@ -11,7 +11,7 @@ class Display:
 
 
     def __str__(self):
-        return f"{self.message}\nDISPLAY {self.id} AT {self.car_park} is {'on' if self.is_on else 'off'}."
+        return f"{self.message}\nDISPLAY {self.id} is {'on' if self.is_on else 'off'}."
 
 
     def update(self, data):
